@@ -1,10 +1,14 @@
 services:
-  allinone:
-    image: youshandefeiyang/allinone
-    container_name: allinone
-    privileged: true
+  pixman:
+    image: pixman/pixman
     restart: always
+    container_name: pixman
+    environment:
+      - http_proxy=http://192.168.50.50:7890
+      - https_proxy=http://192.168.50.50:7890
+      - MYTVSUPER_TOKEN=YOUR_TOKEN
+      - HAMI_SESSION_ID=pixman-e8fb92ba4a350a4334088c8360258da2
+      - HAMI_SERIAL_NO=5645746888
+      - HAMI_SESSION_IP=114.514.191.981
     ports:
-      - "35455:35455"
-    network_mode: bridge
-    command: -tv=true -aesKey=rk7tz30gaojxana73l5waet9ykt9k4ge -userid=5645746888 -token=e8bb3d604945cd6b51c96a4df7975600ea5f6d6d4883213f8fb9d9684d452489c3c9face4486f1ad8dee8087ed34bbda5c5e61001a03d1a41f1b92a928232d3ae4bbf21643c1b2
+      - 5000:5000
