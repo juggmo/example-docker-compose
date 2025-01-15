@@ -11,4 +11,4 @@ services:
       - HAMI_SERIAL_NO=5645746888
       - HAMI_SESSION_IP=114.514.191.981
     ports:
-      - 5050:5000
+      - 5000:5000
