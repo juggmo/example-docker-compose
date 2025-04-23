@@ -1,9 +1,10 @@
 services:
-  pixman:
-    image: pixman/pixman
+  allinone:
+    image: youshandefeiyang/allinone
+    container_name: allinone
+    privileged: true
     restart: always
-    container_name: pixman
-    environment:
-      - MYTVSUPER_TOKEN=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3NzX2lkIjoiMjEyOTMwNTg5IiwiZGV2aWNlX3Rva2VuIjoiQ3ZmTUNzVTh4UGlpYmtDUUVrSzM5NUpnIiwiZGV2aWNlX2lkIjowLCJkZXZpY2VfdHlwZSI6IndlYiIsImRldmljZV9vcyI6ImJyb3dzZXIiLCJkcm1faWQiOm51bGwsImV4dHJhIjp7InByb2ZpbGVfaWQiOjF9LCJpYXQiOjE3MjkzNDY1OTgsImV4cCI6MTcyOTM1MDE5OH0.nR_zZjVkyhOb2AcFgBSeaPUDGVFcoYUD9gzRn6T2LoJ5cUg-FrAq-1dnxBCTcuXb1OQTuTM67SfUYfsp20MzxECv9d7isanQlCo1_MWtLqUka2iiR4Wi2QpvCiQ2weAsb-8sHld14a4ZdAblpwQqGxDG2IFxAyE5tbUi-m0uP5v8E-MKorjbdyPQ8qLh3ao3gsHpZ1gKIoBmA7TsibhGgsdZ0B9xuFgR2j2VwhA2YZob_09PPTKaMYPJvXfotbiKd8cnEokN93AZ8ozwojhSXHU2SLpWqJoEN8tHbFVMGXEHaws1Ft75I6sul-82eL0Hsurc-zQMfbR5BP5vCHL-DTCLkOqNoK030mTz9vLUpYlAW6jCy8Yc3Pw5MQ-EWbze0MKw7MARVIofjE0F0DtiKYCGRJnV0wbFyxku_hRxeItUeQFQqYHFTETzEfikFN7OZbUWGqaeHliSdDABbtBOqme8UUTRcVN-SMxhiRPGYvCXOCWuaNdRaFrUtDvq6-95ENE5R5PMR7KQPwXzYe6vc8sQL8yBpBvZIsLqTr-PArPH_hI6X5pgXbpsilg77IuZojBo1emW9FCajIKMvdijVuSkELuZFJNnqwSldDIHFejn1PMFrYz-6lkdsmEHVHwzfBx
     ports:
-      - 5000:5000
+      - "35455:35455"
+    network_mode: bridge
+    command: -tv=true -aesKey=3hf114ob3j8qwun2vhv3wshvq0svlado -userid=5645746888 -token=b3e204c3c7c1f304b38899a38f62f72db15bc70f1dc5b7a6b76cf5153f185667e0754f643e15461e548258a3672357dbe7a29002c3796f77888d03e703c5fd10511d99e65c6a29
