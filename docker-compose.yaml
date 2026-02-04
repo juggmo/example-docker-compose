@@ -1,7 +1,12 @@
 services:
-  web:
-    build: .
+  livetv:
+    image: juestnow/livetv:main
+    container_name: youtube  
+    restart: always 
     ports:
-      - "${PORT}:5000"
-  redis:
-    image: "redis:alpine"
+      - "9500:9000" 
+    volumes:
+      - ./livetv_data:/root/data 
+      
+    environment:
+      - TZ=Asia/Shanghai  
